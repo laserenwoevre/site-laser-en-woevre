@@ -1,0 +1,55 @@
+name: Process and optimize images
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  image-processing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick webp
+
+      - name: Prepare output directory
+        run: |
+          mkdir -p images
+
+      - name: Process logo (generate WEBP)
+        run: |
+          if [ -f "logo.png" ]; then
+            cwebp -q 80 logo.png -o images/logo.webp || true
+            convert logo.png -strip -resize 800x800 -background none -gravity center -extent 800x800 images/logo.png || cp logo.png images/logo.png
+          fi
+
+      - name: Process client photo (retouch, watermark, webp)
+        run: |
+          if [ -f "193348200.jpg" ]; then
+            convert 193348200.jpg -resize 1200x -auto-orient -strip -quality 85 images/193348200-retouch.jpg || true
+            convert images/193348200-retouch.jpg -alpha set \( -size 1200x1200 xc:none -fill white -draw "roundrectangle 0,0 1199,1199 20,20" \) -compose DstIn -composite images/193348200-retouch.jpg || true
+            if [ -f "logo.png" ]; then
+              convert images/193348200-retouch.jpg \( logo.png -resize 150x150 -alpha set -channel A -evaluate set 50% \) -gravity southeast -geometry +20+20 -composite images/193348200-retouch.jpg || true
+            fi
+            cwebp -q 80 images/193348200-retouch.jpg -o images/193348200-retouch.webp || true
+          fi
+
+      - name: Commit optimized images
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images || true
+          git commit -m "Add optimized images (logo + retouch)" || echo "No changes to commit"
+          git push origin HEAD:main || echo "Push failed"
