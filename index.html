@@ -1,94 +1,59 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>laserenwoevre — Découpe et soudure laser</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <img class="logo" src="images/logo.svg" alt="Logo laserenwoevre" />
-      <div class="company-meta">
-        <h1 id="company-name">laserenwoevre</h1>
-        <p id="tagline">Découpe & soudure laser — ouverture courant novembre</p>
-        <p class="small">Joudreville (54490)</p>
-        <div class="meta-row">
-          <a class="btn" href="mailto:laserenwoevre@gmail.com?subject=Demande%20de%20devis">Demander un devis</a>
-          <a class="btn" href="mailto:laserenwoevre@gmail.com?subject=Informations" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text)">Nous écrire</a>
-        </div>
-      </div>
+    <div class="section-card">
+      <h3>Machine</h3>
+      <p>GWeike M3 Ultra — adaptée aux petites et moyennes séries, avec une excellente précision pour le métal et matériaux non‑métalliques compatibles.</p>
     </div>
-  </header>
 
-  <main class="container">
-    <section id="hero" class="hero">
-      <div>
-        <h2>Nos prestations</h2>
-        <p>Découpe laser, gravure, assemblage et soudure. Nous utilisons la GWeike M3 Ultra pour des découpes précises et des finitions soignées. Ouverture courant novembre — demandez un devis dès maintenant.</p>
-        <div class="section-card">
-          <h3>Machine</h3>
-          <p>GWeike M3 Ultra — adaptée aux petites et moyennes séries, avec une excellente précision pour le métal et matériaux non‑métalliques compatibles.</p>
-        </div>
-
-        <div id="materials" class="section-card">
-          <h3>Matériaux</h3>
-          <p>La faisabilité dépend de l'épaisseur et de la finition ; envoyez vos fichiers (DXF, SVG, PDF) pour un devis précis.</p>
-          <ul>
-            <li>Acier doux</li>
-            <li>Acier inoxydable</li>
-            <li>Aluminium</li>
-            <li>Laiton, cuivre (selon épaisseur)</li>
-            <li>Bois, contreplaqué, MDF</li>
-            <li>Acrylique (PMMA)</li>
-            <li>Plastiques compatibles (ABS, PET) — pas de PVC</li>
-            <li>Tissus, cuir, carton, papier</li>
-          </ul>
-          <p class="note">Remarque : nous n'utilisons pas le PVC car il dégage des fumées toxiques. Pour métaux très épais ou alliages particuliers, contactez‑nous.</p>
-        </div>
-      </div>
-
-      <aside>
-        <div class="images">
-          <figure>
-            <!-- retouched user image will be replaced when you upload the final file -->
-            <img src="https://source.unsplash.com/800x600/?laser,cutting,metal" alt="Découpe laser" />
-            <figcaption>Découpe laser — image libre (Unsplash)</figcaption>
-          </figure>
-
-          <figure>
-            <img src="https://source.unsplash.com/800x600/?welding,metal,workshop" alt="Soudure laser" />
-            <figcaption>Soudure et assemblage — image libre (Unsplash)</figcaption>
-          </figure>
-
-          <figure>
-            <img src="https://source.unsplash.com/800x600/?metal,machine,industrial" alt="Machine" />
-            <figcaption>Machine GWeike M3 Ultra (illustration)</figcaption>
-          </figure>
-
-        </div>
-      </aside>
-    </section>
-
-    <section id="contact" class="section-card">
-      <h2>Contact & demande de devis</h2>
-      <p>Mail direct : <a href="mailto:laserenwoevre@gmail.com">laserenwoevre@gmail.com</a></p>
-      <p>Adresse : Joudreville, 54490</p>
-      <p>Ouverture : courant novembre — prise de rendez‑vous et demandes de devis déjà possibles.</p>
-      <p>Envoyez vos plans, fichiers (DXF, SVG, PDF) ou photos, et recevez un devis rapide.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> laserenwoevre — Tous droits réservés</p>
-      <p class="credit">Images libres : Unsplash (recherches "laser cutting", "welding"). Logo fourni par le client.</p>
+    <div id="materials" class="section-card">
+      <h3>Matériaux</h3>
+      <p>La faisabilité dépend de l'épaisseur et de la finition ; envoyez vos fichiers (DXF, SVG, PDF) pour un devis précis.</p>
+      <ul>
+        <li>Acier doux</li>
+        <li>Acier inoxydable</li>
+        <li>Aluminium</li>
+        <li>Laiton, cuivre (selon épaisseur)</li>
+        <li>Bois, contreplaqué, MDF</li>
+        <li>Acrylique (PMMA)</li>
+        <li>Plastiques compatibles (ABS, PET) — pas de PVC</li>
+        <li>Tissus, cuir, carton, papier</li>
+      </ul>
+      <p class="note">Remarque : nous n'utilisons pas le PVC car il dégage des fumées toxiques. Pour métaux très épais ou alliages particuliers, contactez‑nous.</p>
     </div>
-  </footer>
+  </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <aside>
+    <div class="images">
+      <figure>
+        <picture>
+          <source srcset="images/193348200-retouch.webp" type="image/webp">
+          <img src="images/193348200-retouch.jpg" alt="Découpe et soudure laser - exemple" />
+        </picture>
+        <figcaption>Découpe & soudure — photo fournie par le client (retouchée)</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/laser-cutting.webp" type="image/webp">
+          <img src="images/laser-cutting.jpg" alt="Découpe laser exemple" />
+        </picture>
+        <figcaption>Découpe laser — image libre</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/welding.webp" type="image/webp">
+          <img src="images/welding.jpg" alt="Soudure laser exemple" />
+        </picture>
+        <figcaption>Soudure & assemblage — image libre</figcaption>
+      </figure>
+
+    </div>
+  </aside>
+</section>
+
+<section id="contact" class="section-card">
+  <h2>Contact & demande de devis</h2>
+  <p>Mail direct : <a href="mailto:laserenwoevre@gmail.com">laserenwoevre@gmail.com</a></p>
+  <p>Adresse : Joudreville, 54490</p>
+  <p>Ouverture : courant novembre — prise de rendez‑vous et demandes de devis déjà possibles.</p>
+  <p>Envoyez vos plans, fichiers (DXF, SVG, PDF) ou photos, et recevez un devis rapide.</p>
+</section>
